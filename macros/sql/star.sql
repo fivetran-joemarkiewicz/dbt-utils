@@ -16,7 +16,8 @@
 
     {%- for col in cols -%}
 
-        {%- if col.column not in except -%}
+        {%- set exact_col = "'" + col.column + "'" -%}
+        {%- if exact_col not in except -%}
             {% do include_cols.append(col.column) %}
 
         {%- endif %}
